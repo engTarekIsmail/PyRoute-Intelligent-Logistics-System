@@ -4,19 +4,16 @@ from routing import CityMapFacade, FastestRouteStrategy
 from logistics import OrderQueueManager, Order, CustomerObserver
 
 def main():
-    # 1. Singleton Check
+
     config = SystemConfig()
     
-    # 2. Setup Data Structures
     inventory_root = Category("Main Inventory")
     queue_manager = OrderQueueManager()
     city_map = CityMapFacade(strategy=FastestRouteStrategy())
     
-    # 3. Mock Data Loading (Student replaces this with File I/O)
     laptop = Product("Laptop", 1200.00, 101)
     inventory_root.add(laptop)
     
-    # 4. Interactive Loop
     while True:
         print("\n--- PyRoute Logistics System ---")
         print("1. View Inventory")
@@ -33,7 +30,6 @@ def main():
         elif choice == "2":
             cust_name = input("Customer Name: ")
             dest = input("Destination Node: ")
-            # Creating an Observer for this customer
             customer = CustomerObserver(cust_name)
             queue_manager.attach(customer)
             
@@ -41,11 +37,9 @@ def main():
             queue_manager.add_order(new_order)
         
         elif choice == "3":
-            # Process the next order in queue
             queue_manager.process_next_order()
         
         elif choice == "4":
-            # Implement the routing call here
             start_node = input("Enter start node: ")
             end_node = input("Enter destination node: ")
             try:
