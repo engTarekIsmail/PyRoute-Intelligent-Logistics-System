@@ -1,0 +1,22 @@
+{
+  "name": "Electronics",
+  "type": "category",
+  "children": [
+    {
+      "name": "Laptops",
+      "type": "category",
+      "children": [
+        {"name": "MacBook Pro", "type": "product", "price": 2000, "sku_id": 101},
+        {"name": "Dell XPS", "type": "product", "price": 1500, "sku_id": 102}
+      ]
+    },
+    {
+      "name": "Phones",
+      "type": "category",
+      "children": [
+        {"name": "iPhone 14", "type": "product", "price": 1000, "sku_id": 201},
+        {"name": "Samsung Galaxy S23", "type": "product", "price": 900, "sku_id": 202}
+      ]
+    }
+  ]
+}
